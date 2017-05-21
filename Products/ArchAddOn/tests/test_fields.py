@@ -1,9 +1,9 @@
 
-from base import ArchAddOnTestCase
+from .base import ArchAddOnTestCase
 from Products.Archetypes.Extensions.utils import installTypes
 from Products.Archetypes.public import listTypes
 from Products.ArchAddOn.config import PROJECTNAME
-from StringIO import StringIO
+from io import StringIO
 
 class TestFields(ArchAddOnTestCase):
 

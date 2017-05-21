@@ -1,5 +1,5 @@
 from Products.Archetypes import atapi
-from Fields import USAddressField, LinkField, USPhoneField, EmailField, \
+from .Fields import USAddressField, LinkField, USPhoneField, EmailField, \
     InstructionField, SimpleDataGridField
 # Untested due to problems:
 # from Fields import DynamicField

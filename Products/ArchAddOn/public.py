@@ -1,2 +1,2 @@
-from Widgets import *
-from Fields import *
+from .Widgets import *
+from .Fields import *

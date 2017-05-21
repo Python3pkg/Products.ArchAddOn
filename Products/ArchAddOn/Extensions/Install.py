@@ -3,7 +3,7 @@ from Products.Archetypes.Extensions.utils import installTypes, install_subskin
 from Products.ArchAddOn.config import PROJECTNAME, GLOBALS
 from Products.ArchAddOn.config import INSTALL_SAMPLE_TYPES
 
-from StringIO import StringIO
+from io import StringIO
 
 
 def install(self):
@@ -16,5 +16,5 @@ def install(self):
 
     install_subskin(self, out, GLOBALS)
 
-    print >> out, "Successfully installed %s." % PROJECTNAME
+    print("Successfully installed %s." % PROJECTNAME, file=out)
     return out.getvalue()

@@ -1,6 +1,6 @@
 from Products.Archetypes import atapi
 from Products.Archetypes.public import DisplayList
-from Widgets import LinkWidget, USPhoneWidget, EmailWidget, AddressWidget, \
+from .Widgets import LinkWidget, USPhoneWidget, EmailWidget, AddressWidget, \
     InstructionWidget, SimpleDataGridWidget
 
 
@@ -269,9 +269,9 @@ class DynamicField(atapi.TextField):
             try:
                 result = self.get_unwrapped(instance).pt_render(
                     extra_context={'user': security.getUser()})
-            except TALESError, err:
+            except TALESError as err:
                 if err.type == 'Unauthorized':
-                    raise err.type, err.value, err.traceback
+                    raise err.type(err.value).with_traceback(err.traceback)
                 raise
             return result
         finally:
